@@ -22,7 +22,7 @@
           </router-link>
         </li>
         <li>
-        <router-link to="/home" :class="{ active: $route.path === '/home' }">
+        <router-link to="/admin" :class="{ active: $route.path === '/admin' }">
           Admin
         </router-link>
       </li>
@@ -36,8 +36,8 @@
 
 <style scoped>
 .header {
-  background-color: #2c3e50;
-  height: 100px;
+  background-color: #222222;
+  height: 5%;
   padding: 0 2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-top: 0;

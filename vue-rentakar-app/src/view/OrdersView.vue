@@ -24,7 +24,7 @@ export default {
     <h1>Orders</h1>
     <ul>
       <li v-for="order in orders" v-bind:key="order.id">
-        {{ order.id }} - {{ order.description }}
+       Reservation N° {{ order.id }} - Date de début {{ order.startDate }} - Date de fin {{ order.endDate }}
       </li>
     </ul>
   </div>

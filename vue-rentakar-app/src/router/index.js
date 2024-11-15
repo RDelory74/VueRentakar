@@ -2,8 +2,10 @@ import { createRouter, createWebHistory } from 'vue-router';
 import OrdersView from '../view/OrdersView.vue';
 import UsersView from '../view/UsersView.vue';
 import VehiculesView from '../view/VehiculesView.vue';
-import HomeView from '../view/HomeView.vue';
 import AdminVehicule from "@/components/AdminVehicule.vue";
+import AdminView from "@/view/AdminView.vue";
+import HomeView from "@/view/HomeView.vue";
+import NotFoundView from "@/view/NotFoundView.vue";
 
 const routes = [
     {
@@ -27,18 +29,21 @@ const routes = [
         component: VehiculesView
     },
     {
-      path: '/home',
-      name: 'dash',
-      component: HomeView
-    },
-    {
-        path: '/admin-vehicule',
-        name: 'AdminVehicule',
-        component: AdminVehicule,
+        path: '/admin',
+        name: 'admin',
+        component: AdminView,
+        children: [
+            {
+                path: 'vehicule',
+                name: 'adminVehicule',
+                component: AdminVehicule
+            }
+        ]
     },
     {
         path: '/:pathMatch(.*)*',
-        redirect: '/orders'
+        name: 'Notfound',
+        component: NotFoundView
     }
 ];
 

@@ -1,85 +1,130 @@
 <template>
   <footer class="footer">
-    <div class="footer-content">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="@/assets/RTKlogo.png" alt="Logo" class="logo" />
+        <p>Votre partenaire pour des solutions fiables.</p>
+      </div>
+
+
       <div class="footer-links">
-        <a href="https://github.com/RDelory74/VueRentakar" target="_blank" rel="noopener noreferrer" class="footer-link">
-          <i class="github-icon">
-            <!-- Icon SVG inline -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-            </svg>
-          </i>
-          GitHub
-        </a>
-        <router-link to="/cgv" class="footer-link">CGV</router-link>
+        <h3>Liens Utiles</h3>
+        <ul>
+          <li><a href="/about">À propos</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/faq">FAQ</a></li>
+        </ul>
       </div>
-      <div class="copyright">
-        © {{ new Date().getFullYear() }} RentAKar. Tous droits réservés.
+
+      <div class="footer-social">
+        <h3>Suivez-nous</h3>
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
       </div>
+
+
+      <div class="footer-contact">
+        <h3>Contactez-nous</h3>
+        <p>+33 1 23 45 67 89</p>
+        <p>contact@rentakar.co</p>
+        <p>145 rue de la route, Router, France</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Rentakar. Tous droits réservés.</p>
     </div>
   </footer>
 </template>
 
-<script setup>
+<script>
+export default {
+  name: "FooterNav",
+};
 </script>
 
 <style scoped>
 .footer {
-  background-color: #2c3e50;
-  padding: 1.5rem 0;
-  color: white;
-  margin-top: auto;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.footer-links {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-}
-
-.footer-link {
-  color: white;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.footer-link:hover {
-  background-color: rgba(66, 185, 131, 0.1);
-}
-
-.github-icon {
-  display: flex;
-  align-items: center;
-}
-
-.copyright {
-  color: #a8a8a8;
+  background-color: #222222;
+  color: #ffffff;
+  padding: 5px 0;
   font-size: 0.9rem;
 }
 
-@media (max-width: 768px) {
-  .footer-content {
-    padding: 0 1rem;
-  }
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-  .footer-links {
-    flex-direction: column;
-    gap: 1rem;
-  }
+.footer-logo {
+  max-width: 200px;
+}
+
+.footer-logo .logo {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.footer-links,
+.footer-social,
+.footer-contact {
+  flex: 1;
+  min-width: 200px;
+  margin-top: 10px;
+}
+
+.footer-links h3,
+.footer-social h3,
+.footer-contact h3 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 5px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-social .social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-social .social-icons a {
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.footer-contact p {
+  margin: 5px 0;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #444444;
+  font-size: 0.8rem;
 }
 </style>
