@@ -29,6 +29,7 @@ html, body {
   padding: 0;
   height: 100%;
   background-color: #000000;
+
 }
 #app {
   font-family: Geneva, Arial, sans-serif;
@@ -37,10 +38,8 @@ html, body {
   text-align: center;
   color: #000000;
   background: #6a869f;
+  min-height: 100vh;
 }
 
-.logo {
-    margin: 5% auto;
-    border-radius: 20px
-  }
+
 </style>

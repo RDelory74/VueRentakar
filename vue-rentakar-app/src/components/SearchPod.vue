@@ -31,7 +31,9 @@ export default {
 </script>
 
 <template>
-  <h3>Une location ? Mais pour quand ? </h3>
+  <div class="searchPod">
+  <h3>Je choisi mes dates </h3>
+    <div class="searchPodButton">
   <div class="date-inputs">
     <input
         type="date"
@@ -40,6 +42,9 @@ export default {
         :max="maxDate"
         class="date-input"
     >
+    <div class="bouton">
+      <button @click="fetchAvailableVehicles" class="fetch-button">Rechercher des véhicules</button>
+    </div>
     <input
         type="date"
         v-model="endDate"
@@ -48,10 +53,8 @@ export default {
         class="date-input"
     >
   </div>
-  <div class="bouton">
-    <button @click="fetchAvailableVehicles" class="fetch-button">Rechercher des véhicules</button>
-  </div>
 
+    </div>
   <div class="vehicules-container">
     <div v-if="availableVehicles.length > 0" class="cards-container">
       <div class="vehicule-card" v-for="vehicle in availableVehicles" :key="vehicle.id">
@@ -70,24 +73,28 @@ export default {
       </div>
     </div>
     <p v-else-if="error">{{ error }}</p>
-
+  </div>
   </div>
 </template>
 
 <style>
+.searchPod {
+  font-family: Geneva, Arial, sans-serif;
+  background: rgba(34, 34, 34, 0.13);
+}
 h3 {
   margin: 10px 0 0;
   padding: 2%;
   color: white;
-  font-size: 1rem;
+  font-size: 2rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+
 }
 ul {
   list-style-type: none;
   padding: 0;
 }
 li {
-  display: inline-block;
   margin: 0 10px;
 }
 a {
@@ -105,7 +112,6 @@ a {
   font-size: 1rem;
   padding: 10px 15px;
   border: 2px solid #ccc;
-  border-radius: 25px;
   outline: none;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -121,7 +127,6 @@ button.fetch-button {
 }
 button{
   font-size: 1rem;
-  border-radius: 25px;
   padding: 10px;
   border: 2px solid #ccc;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -129,7 +134,7 @@ button{
 }
 button:hover {
   border-color: transparent;
-  box-shadow: 0 0 8px rgb(16, 8, 8);
+  box-shadow: 0 0 20px rgb(137, 173, 184);
 
 }
 .vehicules-container {

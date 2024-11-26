@@ -48,7 +48,11 @@ export default {
 </script>
 
 <style scoped>
+h3{
+  font-size: 24px;
+}
 .footer {
+  bottom: 0;
   background-color: #222222;
   color: #ffffff;
   padding: 5px 0;

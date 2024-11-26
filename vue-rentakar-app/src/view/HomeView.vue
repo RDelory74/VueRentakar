@@ -15,36 +15,63 @@ export default {
     <div class="content-container">
       <div class="left">
         <div class="image-wrapper">
-          <h1>Bienvenue sur RentaKar</h1>
+          <h1 class="title">Bienvenue sur RentaKar</h1>
           <img class="logo" alt="Rentakar logo" src="@/assets/imghome.png" />
+          <div class="search-overlay">
+            <SearchPod />
+          </div>
         </div>
       </div>
       <div class="right">
         <HelloWorld />
       </div>
     </div>
-    <SearchPod />
   </main>
 </template>
 
 <style scoped>
 .main-content {
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
 }
 
 .content-container {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  flex-grow: 1;
+  position: relative;
 }
 
 .left {
-  flex: 1;
-  position: relative;
+  width: 100%;
+  animation: slideUp 1s ease-out;
 }
-
+.left .image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .image-wrapper {
   position: relative;
+}
+.search-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  z-index: 3;
+  animation: centerEntry 1s ease-out 0.7s backwards;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease-out;
 }
 
 .image-wrapper h1 {
@@ -59,16 +86,40 @@ export default {
 }
 
 .right {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  text-align: right;
+  width: 100%;
+  animation: slideUp 1s ease-out 0.5s backwards;
 }
 
 .logo {
-  max-width: 100%;
-  height: auto;
-  margin-top: 20px;
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 }
 </style>

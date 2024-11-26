@@ -1,8 +1,5 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-
-    <h3>Un trajet, un démenagement ou simplement une virée ... </h3>
     <div class="picto-container">
       <div class="picto-wrapper">
         <img class="picto" alt="moto" src="@/assets/moto.png">
@@ -92,7 +89,7 @@ a {
 }
 
 .picto {
-  border-radius: 25px;
+
   max-width: 100%;
   height: auto;
   object-fit: cover;
