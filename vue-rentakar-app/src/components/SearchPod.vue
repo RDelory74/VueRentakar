@@ -155,7 +155,7 @@ button:hover {
   width: 250px;
   padding: 1rem;
   background-color: #fff;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 4px solid;
   border-image-slice: 1;
@@ -164,7 +164,7 @@ button:hover {
 
 .vehicule-card:hover {
   transform: scale(1.05);
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .vehicule-card h2 {
